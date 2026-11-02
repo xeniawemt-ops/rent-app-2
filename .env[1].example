@@ -1,0 +1,60 @@
+# ==============================================================================
+# NIVASPAY POSTGRESQL & BACKEND ENVIRONMENT CONFIGURATION (.env.example)
+# ==============================================================================
+# Copy this file to .env and configure values for your environment.
+# Never commit actual production secrets or credentials to version control.
+# ==============================================================================
+
+# Node Environment ('development' | 'production' | 'test')
+NODE_ENV="development"
+PORT="3000"
+
+# Application and API URLs
+APP_URL="http://localhost:3000"
+API_URL="http://localhost:3000/api"
+VITE_API_URL="/api"
+
+# ------------------------------------------------------------------------------
+# PostgreSQL Database Connection
+# ------------------------------------------------------------------------------
+# Format: postgresql://[user]:[password]@[host]:[port]/[database]?sslmode=[mode]
+# Local example: postgresql://postgres:postgres@localhost:5432/nivaspay_dev
+# Cloud example: postgresql://nivaspay_user:STRONG_PASSWORD@db.example.com:5432/nivaspay_prod?sslmode=require
+DATABASE_URL="postgresql://username:password@localhost:5432/nivaspay_db"
+DB_SSL="false"
+
+# ------------------------------------------------------------------------------
+# Authentication & Cryptographic Keys
+# ------------------------------------------------------------------------------
+# Generate with: openssl rand -base64 48
+JWT_SECRET="replace_with_a_secure_random_jwt_secret_at_least_32_characters"
+SESSION_SECRET="replace_with_a_secure_random_session_secret"
+
+# ------------------------------------------------------------------------------
+# Razorpay Payment Gateway (Optional in development / testing)
+# ------------------------------------------------------------------------------
+# If left empty, NivasPay payment routes will explicitly indicate
+# that the payment provider is unconfigured, preventing mock payment leakage.
+RAZORPAY_KEY_ID=""
+RAZORPAY_KEY_SECRET=""
+RAZORPAY_WEBHOOK_SECRET=""
+RAZORPAY_ACCOUNT_ID=""
+
+# ------------------------------------------------------------------------------
+# External Services (Notifications & Storage - Optional in dev)
+# ------------------------------------------------------------------------------
+EMAIL_PROVIDER_API_KEY=""
+EMAIL_FROM_ADDRESS="no-reply@nivaspay.com"
+
+SMS_PROVIDER_API_KEY=""
+SMS_SENDER_ID="NVSPAY"
+
+STORAGE_BUCKET="nivaspay-documents-prod"
+STORAGE_ACCESS_KEY=""
+STORAGE_SECRET_KEY=""
+STORAGE_REGION="ap-south-1"
+
+# ------------------------------------------------------------------------------
+# Security & Networking
+# ------------------------------------------------------------------------------
+CORS_ALLOWED_ORIGINS="http://localhost:3000"

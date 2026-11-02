@@ -1,0 +1,6 @@
+{
+  "name": "NivasPay - Indian Rental Housing & DPDP Compliance Platform",
+  "description": "Dual-app rental home booking platform for India with Customer & Owner apps, DPDP Act 2023 compliance, Razorpay Route payments, anti-discrimination safeguards, and field-level encryption.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
